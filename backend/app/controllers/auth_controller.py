@@ -24,7 +24,7 @@ def register():
 
     exists = User.query.filter_by(email=email).first()
     if exists:
-        return jsonify({"error": "Email already exists."}), 
+        return jsonify({"error": "Email already exists."}), 409
 
     exists = User.query.filter_by(username=username).first()
     if exists:

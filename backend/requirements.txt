@@ -6,3 +6,5 @@ Flask-Migrate==4.0.7
 Flask-Cors==4.0.1
 Flask-Login==0.6.3
 email-validator==2.2.0
+PyGithub==2.6.1
+cryptography==42.0.8
