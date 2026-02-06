@@ -9,6 +9,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(50), unique=True, nullable=False, index=True)
     email = db.Column(db.String(150), unique=True, nullable=False, index=True)
     password = db.Column(db.String(255), nullable=False)
+    role = db.Column(db.String(20), nullable=False, server_default="user", index=True)
 
     created_at = db.Column(db.DateTime, server_default=db.func.now(), nullable=False)
     updated_at = db.Column(db.DateTime, server_default=db.func.now(), onupdate=db.func.now(), nullable=False)

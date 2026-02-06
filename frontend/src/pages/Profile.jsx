@@ -3,10 +3,11 @@ import { useAuthStore } from '../store/auth.store';
 import ProfileTabs from '../components/profile/ProfileTabs';
 import ApiKeyPanel from '../components/profile/ApiKeyPanel';
 import ReposPanel from '../components/profile/ReposPanel';
+import ActivityPanel from '../components/profile/ActivityPanel';
 
 export default function Profile() {
   const user = useAuthStore((s) => s.user);
-  const [tab, setTab] = useState('profile');
+  const [tab, setTab] = useState('apikey');
 
   return (
     <div className='space-y-6'>
@@ -17,8 +18,9 @@ export default function Profile() {
 
       <ProfileTabs active={tab} onChange={setTab} />
 
-      {tab === 'profile' && <ApiKeyPanel />}
+      {tab === 'apikey' && <ApiKeyPanel />}
       {tab === 'repos' && <ReposPanel />}
+      {tab === 'activities' && <ActivityPanel />}
     </div>
   );
 }

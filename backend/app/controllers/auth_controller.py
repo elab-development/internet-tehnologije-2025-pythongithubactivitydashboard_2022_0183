@@ -44,7 +44,7 @@ def register():
     return jsonify(
         {
             "message": "Registered successfully.",
-            "user": {"id": user.id, "username": user.username, "email": user.email},
+            "user": {"id": user.id, "username": user.username, "email": user.email, "role": user.role},
         }
     ), 201
 
@@ -70,7 +70,7 @@ def login():
     return jsonify(
         {
             "message": "Logged in.",
-            "user": {"id": user.id, "username": user.username, "email": user.email},
+            "user": {"id": user.id, "username": user.username, "email": user.email, "role": user.role},
         }
     ), 200
 
@@ -90,7 +90,8 @@ def me():
             "user": {
                 "id": current_user.id,
                 "username": current_user.username,
-                "email": current_user.email
+                "email": current_user.email,
+                "role": current_user.role,
             }
         }
     ), 200
