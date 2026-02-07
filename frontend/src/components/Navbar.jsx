@@ -18,6 +18,8 @@ export default function Navbar() {
 
   const [open, setOpen] = useState(false);
 
+  const profileLabel = user?.role === 'admin' ? 'Admin Dashboard' : 'Profile';
+
   return (
     <nav className='sticky top-0 z-50 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/80 shadow-md'>
       <div className='max-w-7xl mx-auto px-4'>
@@ -65,7 +67,7 @@ export default function Navbar() {
                   className='inline-flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 hover:text-white transition'
                 >
                   <User className='h-4 w-4' />
-                  Profile
+                  {profileLabel}
                 </Link>
 
                 <button
@@ -138,7 +140,7 @@ export default function Navbar() {
                     className='flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-gray-800 hover:text-white transition'
                   >
                     <User className='h-4 w-4' />
-                    Profile
+                    {profileLabel}
                   </Link>
 
                   <button

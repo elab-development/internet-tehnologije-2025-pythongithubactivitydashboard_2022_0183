@@ -9,6 +9,11 @@ export const useAuthStore = create((set, get) => ({
 
   clearError: () => set({ error: null }),
 
+  isAdmin: () => {
+    const user = get().user;
+    return user?.role === 'admin';
+  },
+
   hydrate: async () => {
     set({ isLoading: true, error: null });
     try {
